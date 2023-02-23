@@ -1,2 +1,2 @@
 [workspace]
-members = ["osmos-core","osmos-wasm"]
+members = [ "osmos-core","osmos-sim", "osmos-wasm"]
