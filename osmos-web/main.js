@@ -14,10 +14,11 @@ const render = () => {
   const objectList = sim.getObjectList()
   for (let object of objectList) {
     ctx.beginPath()
-    ctx.fillStyle = '#F0A04B'
+    ctx.fillStyle = '#8B008B'
     ctx.arc(object.x * width, object.y * height, object.energy, 0, 2 * Math.PI)
     ctx.fill()
   }
+  sim.step()
   requestAnimationFrame(render)
 }
 

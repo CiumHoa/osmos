@@ -27,6 +27,10 @@ impl Simulator {
         // serde_wasm_bindgen::to_value(value).unwrap()
         serde_wasm_bindgen::to_value(&value).unwrap()
     }
+
+    pub fn step(&mut self){
+        self.simulator.step();
+    }
 }
 
 #[derive(serde::Deserialize, serde::Serialize)]

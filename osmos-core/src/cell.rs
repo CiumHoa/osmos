@@ -3,7 +3,7 @@ pub struct Cell {
     pub acceleration: nalgebra::Vector2<f64>,
     pub velocity: nalgebra::Vector2<f64>,
     pub energy: usize,
-    // pub sensor: crate::sensor::Sensor,
+    pub sensor: crate::sensor::Sensor,
 }
 
 impl Cell {
@@ -15,7 +15,11 @@ impl Cell {
             acceleration: nalgebra::Vector2::new(0.0, 0.0),
             velocity: nalgebra::Vector2::new(0.0, 0.0),
             energy: rand::Rng::gen_range(rng, 1..=2),
+            sensor:crate::sensor::Sensor::new(0.5),
         }
+    }
+    pub fn get_max_velocity_magnitude(&self) -> f64 {
+        0.001 + (1.0 / self.energy as f64) * 0.0005
     }
 }
 

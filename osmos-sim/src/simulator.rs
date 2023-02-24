@@ -17,6 +17,12 @@ impl Default for Simulator {
     }
 }
 
+impl Simulator {
+    pub fn step(&mut self) {
+        crate::system::movement::process(&mut self.rng, &mut self.object_list)
+    }
+}
+
 #[cfg(test)]
 mod tests {
     mod default {
